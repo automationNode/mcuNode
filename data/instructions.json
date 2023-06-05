@@ -1,0 +1,102 @@
+{
+    "setup": [
+        {
+            "action": "pinMode",
+            "parameters": [
+                2,
+                "OUTPUT"
+            ]
+        },
+        {
+            "action": "pinMode",
+            "parameters": [
+                36,
+                "INPUT"
+            ]
+        },
+        {
+            "action": "set",
+            "variable": "A",
+            "value": 55
+        },
+        {
+            "action": "print",
+            "parameters": [
+                {
+                    "action": "divide",
+                    "parameters": [
+                        {
+                            "action": "get",
+                            "variable": "A"
+                        },
+                        5,
+                        5
+                    ]
+                }
+            ]
+        },
+        {
+            "action": "print",
+            "parameters": [
+                {
+                    "action": "analogRead",
+                    "parameters": [
+                        36
+                    ]
+                }
+            ]
+        },
+        {
+            "action": "analogWrite",
+            "parameters": [
+                2,
+                33
+            ]
+        },
+        {
+            "action": "wait",
+            "parameters": [
+                1000
+            ]
+        },
+        {
+            "action": "analogWrite",
+            "parameters": [
+                2,
+                66
+            ]
+        },
+        {
+            "action": "wait",
+            "parameters": [
+                1000
+            ]
+        },
+        {
+            "action": "analogWrite",
+            "parameters": [
+                2,
+                100
+            ]
+        }
+    ],
+    "loop": [
+        {
+            "action": "print",
+            "parameters": [
+                {
+                    "action": "analogRead",
+                    "parameters": [
+                        36
+                    ]
+                }
+            ]
+        },
+        {
+            "action": "wait",
+            "parameters": [
+                1000
+            ]
+        }
+    ]
+}

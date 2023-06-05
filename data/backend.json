@@ -1,0 +1,25 @@
+{
+  "system": {
+    "name": "FIRMATA00000001",
+    "password": "password",
+    "directions": {
+      "lora": "00000000",
+      "tcpip": "0.0.0.0"
+    }
+  },
+  "wifi": {
+    "client": {
+      "name": "FAMILIA ORTIZ",
+      "password": "WifiNode2000",
+      "activated": true,
+      "ipMode": { "static": false, "dynamic": true },
+      "ip0": "192",
+      "ip1": "168",
+      "ip2": "1",
+      "ip3": "100"
+    },
+    "accessPoint": {
+      "activated": false
+    }
+  }
+}

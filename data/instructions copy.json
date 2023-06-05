@@ -1,0 +1,141 @@
+{
+    "setup": [
+        {
+            "action": "pinMode",
+            "parameters": [
+                2,
+                "OUTPUT"
+            ]
+        },
+        {
+            "action": "pinMode",
+            "parameters": [
+                4,
+                "OUTPUT"
+            ]
+        },
+        {
+            "action": "pinMode",
+            "parameters": [
+                3,
+                "INPUT"
+            ]
+        },
+        {
+            "action": "pinMode",
+            "parameters": [
+                36,
+                "INPUT"
+            ]
+        },
+        {
+            "action": "set",
+            "variable": "time",
+            "value": 2500
+        }
+    ],
+    "loop": [
+        {
+            "action": "analogWrite",
+            "parameters": [
+                2,
+                0
+            ]
+        },
+        {
+            "action": "digitalWrite",
+            "parameters": [
+                4,
+                "HIGH"
+            ]
+        },
+        {
+            "action": "set",
+            "variable": "A",
+            "value": "hello world "
+        },
+        {
+            "action": "print",
+            "parameters": [
+                "AnalogRead is: ",
+                {
+                    "action": "analogRead",
+                    "parameters": [36]
+                }
+            ]
+        },
+        {
+            "action": "print",
+            "parameters": [
+                "hello from my message!!",
+                123,
+                2022,
+                {
+                    "hello": "world!!"
+                },
+                {
+                    "action": "get",
+                    "variable": "A"
+                },
+                {
+                    "action": "digitalRead",
+                    "parameters": [3]
+                },
+                {
+                    "action": "analogRead",
+                    "parameters": [36]
+                }
+            ]
+        },
+        {
+            "action": "execute",
+            "function": "setup",
+            "parameters": []
+        },
+        {
+            "action": "wait",
+            "parameters": [
+                {
+                    "action": "get",
+                    "variable": "time"
+                }
+            ]
+        },
+        {
+            "action": "analogWrite",
+            "parameters": [
+                2,
+                125
+            ]
+        },
+        {
+            "action": "digitalWrite",
+            "parameters": [
+                4,
+                "LOW"
+            ]
+        },
+        {
+            "action": "wait",
+            "parameters": [
+                {
+                    "action": "get",
+                    "variable": "time"
+                }
+            ]
+        },
+        {
+            "action": "analogWrite",
+            "parameters": [
+                2,
+                255
+            ]
+        },
+        {
+            "action": "wait",
+            "parameters": [
+                1000
+            ]
+        }
+    ]
+}
