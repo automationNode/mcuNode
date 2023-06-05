@@ -1,0 +1,85 @@
+<script type="text/javascript">
+  RED.nodes.registerType("pinMode", {
+    category: "mcuNode",
+    color: "#85a0a8",
+    defaults: {
+      name: { value: "pinMode" },
+      address: { value: "192.168.0.2" },
+      gpio: { value: 2 },
+      value: { value: "INPUT" },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "automationNode.png",
+    label: function () {
+      return `${this.name}:[${this.address}] : ${this.gpio} : ${this.value}`;
+    },
+    oneditprepare: function () {
+      $("#node-input-gpio").typedInput({
+        types: [
+          {
+            value: 2,
+            options: [
+              { value: 2, label: "gpio 2" },
+              { value: 3, label: "gpio 3" },
+              { value: 4, label: "gpio 4" },
+              { value: 5, label: "gpio 5" },
+              { value: 12, label: "gpio 12" },
+              { value: 13, label: "gpio 13" },
+              { value: 14, label: "gpio 14" },
+              { value: 16, label: "gpio 16" },
+              { value: 17, label: "gpio 17" },
+              { value: 18, label: "gpio 18" },
+              { value: 19, label: "gpio 19" },
+              { value: 23, label: "gpio 23" },
+              { value: 25, label: "gpio 25" },
+              { value: 26, label: "gpio 26" },
+              { value: 27, label: "gpio 27" },
+              { value: 32, label: "gpio 32" },
+              { value: 33, label: "gpio 33" },
+              { value: 34, label: "gpio 34" },
+              { value: 35, label: "gpio 35" },
+              { value: 36, label: "gpio 36" },
+              { value: 39, label: "gpio 39" },
+            ],
+          },
+        ],
+      });
+      $("#node-input-value").typedInput({
+        types: [
+          {
+            value: "INPUT",
+            options: [
+              { value: "OUTPUT", label: "OUTPUT" },
+              { value: "INPUT", label: "INPUT" },
+            ],
+          },
+        ],
+      });
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="pinMode">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+        <br>
+        <br>
+        <label for="node-input-address"><i class="fa fa-tag"></i> Address</label>
+        <input type="text" id="node-input-address" placeholder="Address">
+        <br>
+        <br>
+        <label for="node-input-gpio"><i class="fa fa-tag"></i> Gpio</label>
+        <input type="text" id="node-input-gpio" placeholder="Gpio">
+        <input type="hidden" id="node-input-gpio-type">
+        <br>
+        <br>
+        <label for="node-input-value"><i class="fa fa-tag"></i> Value</label>
+        <input type="text" id="node-input-value" placeholder="Value">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="pinMode">
+  <p>A node for to write digital pin value from microcontroller node</p>
+</script>

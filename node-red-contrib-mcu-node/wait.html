@@ -1,0 +1,44 @@
+<script type="text/javascript">
+  RED.nodes.registerType("wait", {
+    category: "mcuNode",
+    color: "#85a0a8",
+    defaults: {
+      name: { value: "wait" },
+      timeMs: { value: 1000 },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "automationNode.png",
+    label: function () {
+      return `${this.name} : ${this.timeMs} ms`;
+    },
+    oneditprepare: function () {
+      $("#node-input-timeMs").typedInput({
+        type: "num",
+        types: ["num"],
+        typeField: "#node-input-timeMs-type",
+      });
+      $("#node-input-timeMs").on("change", (event, type, value) => {
+        if (value < 80) {
+          $("#node-input-timeMs").val(80);
+        }
+      });
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="wait">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+        <br>
+        <br>
+        <label for="node-input-timeMs"><i class="fa fa-tag"></i> timeMs</label>
+        <input type="text" id="node-input-timeMs" placeholder="timeMs">
+        <input type="hidden" id="node-input-timeMs-type">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="wait">
+  <p>A node for to write digital pin value from microcontroller node</p>
+</script>
