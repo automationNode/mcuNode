@@ -13,9 +13,7 @@ module.exports = function (RED) {
             execute: true,
             instruction: {
               action: "analogRead",
-              parameters: {
-                gpio: config.gpio,
-              }
+              parameters: [config.gpio],
             },
           };
           this.status({ fill: "yellow", shape: "dot", text: "Executing..." });

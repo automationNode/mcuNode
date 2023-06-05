@@ -11,10 +11,7 @@ module.exports = function (RED) {
             execute: true,
             instruction: {
               action: "pinMode",
-              parameters: {
-                gpio: config.gpio,
-                value: config.value,
-              },
+              parameters: [config.gpio, config.value],
             },
           };
           this.status({ fill: "yellow", shape: "dot", text: "Executing..." });
