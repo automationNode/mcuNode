@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-mcu-node",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A environment for to execute instructions in an microcontroller node",
   "node-red": {
     "nodes": {
