@@ -18,9 +18,6 @@ void setup()
   backendJson = stringToJson(readFile("/backend.json"));
   serializeJsonPretty(backendJson, Serial);
 
-  instructionsParse();
-  //executeSetup();
-
   displayPresentation();
   displayConnecting();
 
@@ -45,5 +42,4 @@ void loop()
     delay(500);
     ESP.restart();
   }
-  //executeLoop();
 }
